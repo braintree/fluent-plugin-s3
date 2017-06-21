@@ -1,0 +1,296 @@
+Release 0.8.3 - 2017/05/09
+
+  * Add tmp_dir parameter to change the directory for tempfile
+
+
+Release 0.8.2 - 2017/02/29
+
+  * Log debug message when `debug` or `trace` is set in `@log_level`
+
+
+Release 0.8.1 - 2017/01/29
+
+  * out_s3: Add ssl_verify_peer option to disable cert check
+  * out_s3: Fix %{hostname} regression in path
+
+
+Release 0.8.0 - 2016/12/20
+
+  * out_s3: Add check_object / check_bucket parameters for only put permission
+  * Remove fluent-mixin-config-placeholders dependency
+
+
+Release 0.7.2 - 2016/10/20
+
+  * in_s3: Replace old parser API with new one
+  * in_s3: Don't stop SQS polling when error happens
+
+
+Release 0.7.1 - 2016/09/02
+
+  * Support IAM role for Amazon ECS task
+
+
+Release 0.7.0 - 2016/08/10
+
+  * Add s3 input plugin
+
+
+Release 0.6.9 - 2016/07/28
+
+  * Support v0.14
+  * Fix aws_iam_retries warning
+  * Fix race condition at start with buffers
+
+
+Release 0.6.8 - 2016/04/19
+
+  * Add sse customer key options
+
+
+Release 0.6.7 - 2016/03/31
+
+  * Add signature_version parameter
+  * Add warn_for_delay parameter
+
+
+Release 0.6.6 - 2016/03/16
+
+  * Fix ACL handling in PUT operation
+
+
+Release 0.6.5 - 2016/01/13
+
+  * Add description to parameters
+  * Use path as prefix in API key check
+
+
+Release 0.6.4 - 2015/12/03
+
+  * Add secret parameters to role_arn, external_id and ssekms_key_id
+  * Fix region handling in assume_role_credentials
+
+
+Release 0.6.3 - 2015/11/25
+
+  * Add compute_checksums parameter
+
+
+Release 0.6.2 - 2015/11/24
+
+  * Add ssekms_key_id option to use KMS encryption
+
+
+Release 0.6.1 - 2015/10/30
+
+  * Fix server_side_encryption error
+  * Keep hex random identity on rebooting
+  * Fix Tempfile handling on windows
+
+
+Release 0.6.0 - 2015/10/09
+
+  * Allow path based calling format
+  * Add hex_random placeholder
+  * Add overwrite option
+
+
+Release 0.6.0.pre1 - 2015/09/10
+
+  * Use AWS SDK v2
+
+
+Release 0.5.11 - 2015/08/04
+
+  * Add acl parameter
+  * Fix use_server_side_encryption parameter
+
+
+Release 0.5.10 - 2015/07/27
+
+  * Add "uuid_flush" placeholder to s3_object_key_format for creating unique object
+
+
+Release 0.5.9 - 2015/06/10
+
+  * Add secret option to AWS key related parameters
+
+
+Release 0.5.8 - 2015/06/09
+
+  * Fix credential provider selection for env vars
+  * Add aws_iam_retries parameter to set number of attemps to the EC2 metadata service
+
+
+Release 0.5.7 - 2015/03/31
+
+  * Use s3_endpoint instead of endpoint for S3 Client configuration for S3 compatible services
+  * Increase the number of retry when use IAM role
+
+
+Release 0.5.6 - 2015/03/02
+
+  * Force to use aws-sdk-v1, not aws-sdk
+
+
+Release 0.5.5 - 2015/02/19
+
+  * Revive s3_endpoint parameter for S3 compatible services
+
+
+Release 0.5.4 - 2015/02/12
+
+  * Add use_server_side_encryption parameter
+
+
+Release 0.5.3 - 2015/02/06
+
+  * Add error information in API check
+  * Add GzipWriter fallback to gzip_command
+
+
+Release 0.5.2 - 2015/02/05
+
+  * Add experimental gzip_command compressor
+
+
+Release 0.5.1 - 2014/12/18
+
+  * Skip apikey_check error when auto_create_bucket is true and bucket doesn't exist
+
+
+Release 0.5.0 - 2014/12/07
+
+  * Make compression algorithm pluggable
+  * Remove format_json parameter
+  * Remove s3_endpoint parameter
+  * Relax fluentd version restriction to support 0.12 or later
+
+
+Release 0.4.3 - 2014/11/10
+
+  * Change API check message to consider region mismatch
+
+
+Release 0.4.2 - 2014/10/22
+
+  * Update fluent-mixin-config-placeholders to v0.3.0
+
+
+Release 0.4.1 - 2014/10/16
+
+  * Add 's3_region' option to specify S3 region
+  * Restrict aws-sdk gem dependency version to use v1
+  * Fix infinite loop when same object path is generated
+
+
+Release 0.4.0 - 2014/06/06
+
+  * Add 'format' option to change one line format
+  * Update fluentd dependency to v0.10.49
+
+
+Release 0.3.7 - 2014/03/07
+
+  * Support lzma2 compression using 'xz' command
+    https://github.com/fluent/fluent-plugin-s3/pull/41
+  * Relax aws-sdk gem requirement
+    https://github.com/fluent/fluent-plugin-s3/pull/42
+
+
+Release 0.3.6 - 2014/02/05
+
+  * Support 'log_level' option
+
+
+Release 0.3.5 - 2013/12/05
+
+  * Add 'reduced_redundancy' option to store logs in reduced redundancy
+    https://github.com/fluent/fluent-plugin-s3/pull/33
+
+
+Release 0.3.4 - 2013/07/31
+
+  * Add dynamic path slicing by time formatted string
+    https://github.com/fluent/fluent-plugin-s3/pull/24
+
+
+Release 0.3.3 - 2013/06/18
+
+  * Fix require bug on case-sensitive environment
+
+
+Release 0.3.2 - 2013/06/18
+
+  * Support lzo mime-type
+    https://github.com/fluent/fluent-plugin-s3/pull/29
+  * Add proxy_uri option
+    https://github.com/fluent/fluent-plugin-s3/issues/25
+  * Add check_apikey_on_start option
+    https://github.com/fluent/fluent-plugin-s3/pull/28
+
+
+Release 0.3.1 - 2013/03/28
+
+  * Support json and text mime-types
+    https://github.com/fluent/fluent-plugin-s3/pull/20
+
+
+Release 0.3.0 - 2013/02/19
+
+  * Enable dynamic and configurable S3 object kyes
+    https://github.com/fluent/fluent-plugin-s3/pull/12
+  * Fix a lot of temporary files were left on /tmp when the plugin failed to write to S3
+    https://github.com/fluent/fluent-plugin-s3/pull/15
+  * Enable fluent-mixin-config-placeholders to support hostname, uuid and other parameters in configuration
+    https://github.com/fluent/fluent-plugin-s3/pull/19
+  * Update 'aws-sdk' version requirement to '~> 1.8.2'
+    https://github.com/fluent/fluent-plugin-s3/pull/21
+  * Create new S3 bucket if not exists
+    https://github.com/fluent/fluent-plugin-s3/pull/22
+  * Check the permission and bucket existence at start method, not write method.
+
+
+Release 0.2.6 - 2013/01/15
+
+  * Add use_ssl option
+
+
+Release 0.2.5 - 2012/12/06
+
+  * Add format_json and time/tag mixin options [#9]
+
+
+Release 0.2.4 - 2012/11/21
+
+  * Set content type when writing file to s3
+
+
+Release 0.2.3 - 2012/11/19
+
+  * Loosen 'aws-sdk' version requirement from "~> 1.1.3" to "~> 1.1"
+  * Support aws-sdk facility to load credentials from ENV vars or IAM Instance Profile by making the credentials non-mandatory
+  * Use Yajl instead of to_json not to raise exceptions when it got invalid bytes as UTF-8.
+
+
+Release 0.2.2 - 2011/12/15
+
+  * Add s3_endpoint option
+
+
+Release 0.2.1 - 2011/10/24
+
+  * Add sequential number to the file to avoid overwriting
+  * Use bundler instead of jeweler for packaging
+  * Updated README
+
+
+Release 0.2.0 - 2011/10/16
+
+  * Updated to fluentd-0.10.0
+
+
+Release 0.1.1 - 2011/09/27
+
+  * First release
+
